@@ -1,21 +1,29 @@
 from unittest import TestCase, main
-from first_task import first_task
+from reverse_text import reverse_text
 
 
-class FirstTaskTest (TestCase):
+class ReverseTextTest (TestCase):
+    def setUp(self):
+            self.cases = [
+            ("abcd efgh", "dcba hgfe"),
+            ("a1bcd efg!h", "d1cba hgf!e"),
+            (" ", " ")]
 
-    def test_one (self):
-        self.assertEqual(first_task('abcd efgh'), 'dcba hgfe')
+
+    def test_normal_behevior (self):
+        self.assertEqual(reverse_text('abcd efgh'), 'dcba hgfe')
 
 
-    def test_two(self):
+    def test_wrong_type(self):
         with self.assertRaises(AttributeError):
-            first_task(0)
+            reverse_text(0)
 
 
-    def test_three(self):
-        first_task('a1bcd efg!h')
-        self.assertTrue(first_task('d1cba hgf!e'))
+    def test_is_true(self):
+        reverse_text('a1bcd efg!h')
+        self.assertTrue(reverse_text('d1cba hgf!e'))
+
 
 if __name__ == '__main__':
     main()
+    

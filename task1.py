@@ -1,4 +1,4 @@
-def first_task (text):
+def reverse_text (text):
     # your code here
     reversed_text = []
     for i in text.split():
@@ -17,4 +17,5 @@ def first_task (text):
     return ' '.join(reversed_text)
 
 if __name__ == '__main__':
-    first_task ()
+    reverse_text()
+    
