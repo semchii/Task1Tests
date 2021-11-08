@@ -1,5 +1,8 @@
 def reverse_text (text):
-    # your code here
+    if not isinstance (text,str):
+        raise ValueError ('Wrong type, must use str type')
+    if len(text) < 2:
+        return text
     reversed_text = []
     for i in text.split():
         alpha = []
